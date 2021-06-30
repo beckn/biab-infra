@@ -1,0 +1,10 @@
+---
+- name: Copy authorized_keys file
+  template:
+    src: "authorized_keys.j2"
+    dest: "{{ authorised_keys_file_path }}"
+    backup: no
+    force: yes
+    owner: "{{ user }}"
+    group: "{{ user }}"
+    mode: '0600'

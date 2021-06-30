@@ -1,0 +1,7 @@
+---
+- hosts: beckn_one_instances
+  roles:
+    - { role: bootstrap, tags: bootstrap }
+  become: yes
+  tags:
+    - bootstrap_beckn_one_instances

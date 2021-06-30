@@ -1,0 +1,17 @@
+name: Bootstrap Beckn One Instances
+
+on: [ push ]
+
+jobs:
+  deploy:
+    name: Bootstrap instances
+    if: github.ref == 'refs/heads/main'
+    runs-on: [ self-hosted, linux ]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Bootstrap instances using ansible
+        run: |
+          cd ansible
+          export ANSIBLE_ROLES_PATH=./roles
+          /home/ubuntu/.local/bin/ansible-playbook playbooks/bookstrap.yml -i inventory/qa.ini
