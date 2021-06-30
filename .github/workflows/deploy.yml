@@ -14,4 +14,4 @@ jobs:
         run: |
           cd ansible
           export ANSIBLE_ROLES_PATH=./roles
-          /home/ubuntu/.local/bin/ansible-playbook playbooks/bookstrap.yml -i inventory/qa.ini
+          /home/ubuntu/.local/bin/ansible-playbook playbooks/bootstrap.yml -i inventory/qa.ini
